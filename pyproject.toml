@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "project-environment-cli"
+version = "0.1.0"
+description = "Collect and persist project-specific environment metadata."
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1",
+]
+
+[project.scripts]
+proj = "proj_cli.main:cli"
+
+[tool.setuptools.packages.find]
+where = ["."]          
+include = ["proj_cli", "proj_conf", "proj_start", "proj_watch"]
